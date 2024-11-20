@@ -30,7 +30,7 @@ route.post('/text-mail', (req, res) => {
   const mailData = {
     from: 'emjarvisnotifications@gmail.com',
     to: 'emilylouisejarvis@gmail.com',
-    subject: 'emjarvis Notification',
+    subject: 'Contact Page Message',
     // text: text,
     html: `
     <b> ${name} </b> <br>
