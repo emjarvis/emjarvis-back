@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
+const cors = require('cors');
 const app = express();
 
 app.use(bodyParser.json());
@@ -13,6 +14,13 @@ app.use('/v1', route);
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });
+
+app.use(
+  cors({
+    origin: '*', // Replace with your frontend's URL
+    methods: ['POST'], // Specify allowed methods
+  }),
+);
 
 const transporter = nodemailer.createTransport({
   port: 465,
